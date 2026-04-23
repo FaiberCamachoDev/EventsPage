@@ -1,0 +1,33 @@
+﻿@model List<EventsPage.Models.Event>
+
+<h2>Events</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">New event</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Place</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.Title</td>
+            <td>@e.Date.ToShortDateString()</td>
+            <td>@e.Location</td>
+            <td>
+                <div class="btn-group">
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@e.Id">Show</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@e.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@e.Id">Delete</a>
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

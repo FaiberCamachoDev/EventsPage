@@ -1,0 +1,13 @@
+@model EventsPage.Models.Event
+
+<h2>Delete Event</h2>
+
+<p>You sure to delete this event?</p>
+
+<p><strong>@Model.Title</strong></p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button class="btn btn-danger">Delete event</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+</form>

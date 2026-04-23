@@ -7,4 +7,9 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Response\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
